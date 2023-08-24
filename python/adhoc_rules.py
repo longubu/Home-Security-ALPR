@@ -1,0 +1,41 @@
+'''Adhoc rules to simplify algorithm and remove false positives'''
+
+
+# words that will be ignored when encountered
+words_to_ignore = {
+    'toyota',
+    'honda',
+    'lexus',
+    'ford',
+    'tesla',
+    'acura',
+    'elk grove',
+    'elkgrove',
+    'sacramento',
+    'dealer',
+    'dealership',
+    'Ealyroni',
+    'belut',
+    'elniels',
+    'eplin',
+    'blu',
+    'folsom',
+    'roseville',
+    'ceritos',
+    'buick',
+    'gmc',
+    'chevy',
+    'cadilac',
+    'davis',
+    'jeep',
+    'reolink',
+    'replink',
+    'repli',
+    'garbage',
+    'property',
+    'of',
+    'utilities',
+    'municipal',
+    'mento',
+    'sac'
+}
