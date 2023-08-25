@@ -20,16 +20,6 @@ predictions_key = 'predictions'
 
 
 def valid_plate(val: str):
-    if not val:
-        return False
-
-    if (len(val)) > 7:  # can't be greater > 7 characters
-        return False
-
-    return True
-
-
-def valid_plate(val: str):
     '''Rules to check for valid plates'''
     if not val:
         return False
@@ -58,7 +48,7 @@ def detect_cars(image_bytes):
 
 
 def detect_licenseplates(image_bytes):
-    '''Detect licenseplates from image_bytes usin Codeproject.AI custom license plate module'''
+    '''Detect licenseplates from image_bytes using Codeproject.AI custom license plate module'''
     # send image to codeproject AI module
     license_response = requests.post(apiserver['custom_license_plate'],
                                      files={"image": image_bytes}).json()
@@ -73,7 +63,7 @@ def detect_licenseplates(image_bytes):
     
 
 def read_licenseplate(image_bytes):
-    '''Read license plates from image_bytes usin Codeproject.AI OCR module'''
+    '''Read license plates from image_bytes using Codeproject.AI OCR module'''
     # send image to codeproject AI modules
     ocr_response = requests.post(apiserver['ocr'],
                                  files={"image": image_bytes}).json()    
