@@ -1,4 +1,4 @@
-# Smart Home Security & Automatic License Detection
+# Smart Home Security & Automatic License Plate Reader
 Automatically detect and read license plates using open-sourced AI tools and Reolink's home-security cameras. The goal is to leverage existing pre-trained ML algorithms for practical AI-enhanced home-surveillance without the need to train or develop fine-tuned models/algorithms, to track and store detected events of interest, and to build custom alarm systems.
 
 ### Background & Motivation
@@ -10,7 +10,7 @@ The goal was to detect and read license plates while leveraging existing tools/a
 ### Automatic License Plate Reader (ALPR)
 Initially, Codeproject.AI's built-in automatic licese plate reader module was used out-of-thebox; however, it generated a lot of false positives and did not accurately read the license text. To improve upon this, 3 different pre-trained vision detection models predictions were used to individually detect the cars, then the license plates, and lastly to read the license plates' text. The diagram below illustrate this process. 
 
-![ALPR Alg](docs/images/alpr_arg.PNG)
+![ALPR Alg](docs/images/alpr_alg.PNG)
 
 First, each frame in the video is processed through Codeproject.AI's Object Detector (YOLOv5 6.2) to detect and localize the car. Each frame with probability > 80% of a car is processed through another Codeproject.AI module, the custom license plate detector. Finally, frames with detected license plates are cropped to license only and processed through Codeproject.AI's Optical Character Recognition module, PaddleOCR, which is used to read the license text. Each frame with a valid license plate text is counted and the license string with the most counts is determined to be the valid license plate reading for the given recording. 
 
