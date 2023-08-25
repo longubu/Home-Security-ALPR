@@ -1,4 +1,4 @@
-'''Convenient models for storing data and predictions
+'''Convenient classes for storing data and predictions
 '''
 
 
@@ -7,11 +7,13 @@ class LicensePlateData(object):
     def __init__(self, text):
         self.text = text
 
+
 class SnapshotData(object):
     '''Stores a snapshot of the frame and license plate'''
     def __init__(self, screenshot, lp_img):
         self.screenshot = screenshot
         self.lp_img = lp_img
+
 
 class Prediction:
     '''Stores prediction probability, label, and bounding box'''
@@ -29,3 +31,6 @@ class Prediction:
         self.y_min = dict["y_min"]
         self.x_max = dict["x_max"]
         self.y_max = dict["y_max"]
+        
+    def __repr__(self):
+        return f'Prediction: {self.label} | Probability: {self.confidence} | boundingbox: [({self.x_min, self.x_max}), ({self.y_min}, {self.y_max})]'

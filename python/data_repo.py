@@ -2,7 +2,6 @@
 '''
 import mysql.connector
 import os
-import utils
 from models import LicensePlateData
 
 
